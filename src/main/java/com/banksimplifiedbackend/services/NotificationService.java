@@ -20,8 +20,8 @@ public class NotificationService {
        ResponseEntity<String> notificationResponse = restTemplate.postForEntity("https://run.mocky.io/v3/54dc2cf1-3add-45b5-b5a9-6bf7e7f1f4a6)", notificationRequest, String.class);
 
        if (!(notificationResponse.getStatusCode() == HttpStatus.OK)) {
-           System.out.println("erro ao enviar notificação");
-           throw new Exception("Serviço de notificação está fora do ar");
+           System.out.println("Error sending notification");
+           throw new Exception("Notification service is down");
        }
     }
 }
